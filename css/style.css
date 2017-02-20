@@ -1,0 +1,40 @@
+*{margin:0;padding:0;border:0; }
+body {background-color: #000; font-family: "Microsoft YaHei"; color: #fff;} 
+ul{padding:0;margin:0;}
+li{list-style: none}
+ #wrapper-inner{width: 950px; margin:0 auto; }
+ .wrapper-inner-tab{position: relative; float: left; width: 950px; margin-top: 125px; }
+ .title {width: 100%; margin-top: 30px; font-size: 25px;  float: left; text-align: center; margin-bottom: 80px; }
+ .backgrounds {float: left; height: 300px; width: 950px; }
+ .first{float: left; height: 300px; width: 33.33%; background-color: #feb41d; }
+ .second{float: left; height: 300px; width: 33.33%; background-color: #5e7c87; }
+ .third{float: left; height: 300px; width: 33.33%; background-color: #4c5f6d; }
+ .sim-button{line-height: 50px; height: 50px; text-align: center; margin-right: auto; margin-left: auto; margin-top: 125px; width: 60%; cursor: pointer; }
+ .button{color: rgba(255,255,255,1); -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; position: relative; }
+ .button a{color: rgba(51,51,51,1); text-decoration: none; display: block; }
+ .button span{z-index: 2; display: block; position: absolute; width: 100%; height: 100%; }
+ .button::before{content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; border: 1px solid rgba(255,255,255,0.5); background-color: rgba(255,255,255,0.25); }
+ .button::after{content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; border: 1px solid rgba(255,255,255,0.5); background-color: rgba(255,255,255,0.25); }
+ .button:hover::before{-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); background-color: rgba(255,255,255,0); }
+ .button:hover::after{-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); background-color: rgba(255,255,255,0); }
+ .button.btn-on::before{-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); background-color: rgba(255,255,255,0); }
+ .button.btn-on::after{-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); background-color: rgba(255,255,255,0); }
+ .food-div{position: absolute;width: 950px;height: 45px;bottom:-100px;left: 0;overflow: hidden;font-size: 34px;}
+ .food-div ul{position: absolute; left: 0; top: 0;width: 100%;text-align: center;} 
+ .food-div li{height: 45px;}
+ #stop{position: relative; width: 168px;height: 60px;display: none;margin-left: calc(50% - 84px);top:200px;border: solid 2px #41403E;background: transparent; -webkit-transition: all .5s ease; transition: all .5s ease; color: #fff; font-size: 24px; letter-spacing: 2px; outline: none; border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; cursor: pointer; box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.3);}
+#stop:hover{box-shadow: 20px 38px 34px -26px rgba(255, 255, 255, 0.2);}
+.box{display: none;position: absolute;width: 100%;height: 100%;z-index: 2;color:#000;text-align: center;z-index: 3;}
+#confirm-bg,#mood-bg{width: 100%;height: 100%;background: rgba(255,255,255,.3);}
+#confirm #confirm-box{position: absolute;top:50%;left:50%;width: 400px;min-height: 220px;padding-bottom: 20px; background: #fff; transform :translate(-50%,-50%); border-radius: 8px}
+#confirm #confirm-img{height: 116px;background: url(../img/question.png) no-repeat center center/92px auto;}
+#mood-sad #mood-img{height: 100px;background: url(../img/cry.png) no-repeat center center/84px auto;}
+#mood-happy #mood-img{height: 125px;background: url(../img/laugh.png) no-repeat center center/84px auto;}
+#confirm #confirm-title{font:20px/20px bold;}
+#confirm #confirm-message{font-size: 14px;margin: 10px auto 20px;}
+.box button{background-color: #c1c1c1; color: #fff; border: none; box-shadow: none; font-size: 17px; font-weight: 500; -webkit-border-radius: 4px; border-radius: 5px; padding: 10px 30px; cursor: pointer; margin: 0 10px; outline: none;} 
+#confirm button:first-child{background: #c1c1c1}
+#confirm button:last-child{ background-color: #8CD4F5;}
+#mood-happy button{background: #8CD4F5}
+#mood-box{position: absolute;top:50%;left:50%;width: 400px;min-height: 220px;padding-bottom: 20px; background: #fff; transform :translate(-50%,-50%); border-radius: 8px}
+.message{width: 300px;margin: 0 auto;margin-bottom: 14px;}

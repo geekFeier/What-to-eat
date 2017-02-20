@@ -15,7 +15,7 @@ class GetFood extends PublicFood {
         foreach ($list as $k=>$v){
             switch ($v['type']){
                 case 1 :
-                    $this->food['breakfase'][] = $v['title'];
+                    $this->food['breakfast'][] = $v['title'];
                     break;
                 case 2 :
                     $this->food['lunch'][] = $v['title'];
@@ -25,9 +25,9 @@ class GetFood extends PublicFood {
                     break;
             }
         }
-        $this->food['breakfase'] = $this->food['breakfase'] ?  $this->food['breakfase'] : array();
+        $this->food['breakfast'] = $this->food['breakfast'] ?  $this->food['breakfast'] : array();
 
-        if(!isset($this->food['breakfase'] )){$this->food['breakfase'] = array();}
+        if(!isset($this->food['breakfast'] )){$this->food['breakfast'] = array();}
         if(!isset($this->food['lunch'] )){$this->food['lunch'] = array();}
         if(!isset($this->food['dinner'] )){$this->food['dinner'] = array();}
 
