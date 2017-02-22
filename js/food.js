@@ -107,19 +107,19 @@ function loadFood() {
 			oConfirmNo.onclick = function() {
 				oMoodMessage.innerHTML = foodNameTxt + " 已黯然失色躲在角落检测身体营养指数哭到妆都花了还是会深思熟虑如何才能博君子一笑即使还是会痛定思痛。";
 				oWrapperInner.style.display = 'none';
-				confirm.style.display = 'none';
+				oConfirm.style.display = 'none';
 				oMoodSad.style.display = 'block';
 			}
-			oConfirmYes.onclick = function() {
+			ooConfirmYes.onclick = function() {
 				oMoodMessage.innerHTML = "做到最好只为博得君子莞尔一笑" + foodNameTxt + "此时正在犄角旮旯歇斯底里的狂笑并享受被君子翻牌的自豪感和即将被食用的快乐感。";
 				oWrapperInner.style.display = 'none';
-				confirm.style.display = 'none';
+				oConfirm.style.display = 'none';
 				oMoodHappy.style.display = 'block';
 				oFoodName.innerHTML = foodNameTxt;
 			}
 			oMoodBtn[0].onclick = oMoodBtn[1].onclick = function() {
 				oWrapperInner.style.display = 'block';
-				confirm.style.display = 'none';
+				oConfirm.style.display = 'none';
 				oMoodSad.style.display = 'none';
 				oMoodHappy.style.display = 'none';
 			}
