@@ -1,18 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<title>添加营养餐</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<form action="./api/SetFood.php" method="get">
-    <input type="text" name="name" value="" placeholder="食物名称">
-    <select name="type" id="">
-        <option value="1">早餐</option>
-        <option value="2">中餐</option>
-        <option value="3">晚餐</option>
-    </select>
-    <input type="submit" value="我吃">
-</form>
+<style>
+
+</style>
+<body> 
+    <div class="form-box">
+    	<div class="clearfix">
+    		<input type="text" name="name" value="" placeholder="食物名称">
+    		<div class="type">
+    			<div class="type-tips">- 请选择 -</div>
+	    		<ul id="type-ul"> 
+	    			<li>早餐</li>
+	    			<li>中餐</li>
+	    			<li>晚餐</li>
+	    		</ul> 
+    		</div>  
+    	</div>
+    	<button id="add-food-btn">添加</button>
+    </div>
 </body>
+<script>
+	var flag = true;
+	document.getElementsByClassName('type-tips')[0].onclick = function() {
+		document.getElementById('type-ul').display = "block"; 
+	}
+	document.getElementById('type-ul').children.onclick = function(){ 
+		flag = !flag;
+	}
+	document.getElementById('add-food-btn').onclick = function() {
+		var name = document.getElementsByName('name')[0].value,
+			type = document.getElementsByName('type')[0].value;
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("POST", "./api/SetFood.php?name=" + name + "&type=" + type, true);
+		xmlhttp.send();
+	}
+</script>
 </html>

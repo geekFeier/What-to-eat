@@ -1,5 +1,5 @@
 *{margin:0;padding:0;border:0; }
-body {background-color: #000; font-family: "Microsoft YaHei"; color: #fff;} 
+body {background-color:#191717; font-family: "Microsoft YaHei"; color: #fff;} 
 ul{padding:0;margin:0;}
 li{list-style: none}
  #wrapper-inner{width: 950px; margin:0 auto; }
@@ -38,3 +38,16 @@ li{list-style: none}
 #mood-happy button{background: #8CD4F5}
 #mood-box{position: absolute;top:50%;left:50%;width: 400px;min-height: 220px;padding-bottom: 20px; background: #fff; transform :translate(-50%,-50%); border-radius: 8px}
 .message{width: 300px;margin: 0 auto;margin-bottom: 14px;}
+
+
+body{background:#191717;color:#fff;}
+.form-box{position: absolute; margin:auto;left: 0;top: 0;right: 0;bottom: 0;width: 500px;height: 185px;background:#EEEEEE;border-radius: 6px;}
+.clearfix{text-align: center;padding:10px;box-sizing: border-box;margin-top: 30px;} 
+.form-box input{outline: none;border:#000;width: 230px;height: 47px;background:#65727b;color:#fff;padding-left: 10px;box-sizing:border-box;font-size: 14px;} 
+.form-box input::-webkit-input-placeholder{color:#e2dfdf;}
+.type{width: 100px;height: 47px;background: #5E7C87; position: relative;left: -4px;cursor: pointer;}
+.clearfix input,.clearfix .type{display: inline-block;line-height: 47px;vertical-align: top}
+#add-food-btn{outline: none;cursor: pointer;z-index: 2; line-height: 47px; height: 47px; display: block; background: #FEB41D; text-align: center; width:300px;margin:9px auto; color: #fff;font-size: 16px}
+#type-ul li{text-align: center;border-bottom:1px solid #fff;background: #333;cursor: pointer;height: 38px;line-height: 38px;}
+#type-ul{width: 100px;display: none;}
+#type-ul li:last-child{border-bottom: 0}
