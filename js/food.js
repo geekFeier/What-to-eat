@@ -110,7 +110,7 @@ function loadFood() {
 				oConfirm.style.display = 'none';
 				oMoodSad.style.display = 'block';
 			}
-			ooConfirmYes.onclick = function() {
+			oConfirmYes.onclick = function() {
 				oMoodMessage.innerHTML = "做到最好只为博得君子莞尔一笑" + foodNameTxt + "此时正在犄角旮旯歇斯底里的狂笑并享受被君子翻牌的自豪感和即将被食用的快乐感。";
 				oWrapperInner.style.display = 'none';
 				oConfirm.style.display = 'none';
