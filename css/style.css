@@ -1,8 +1,9 @@
 *{margin:0;padding:0;border:0; } 
-body {background-color:#191717; font-family: "Microsoft YaHei"; color: #fff;} 
+body {min-height: 100vh; font-family: "Microsoft YaHei"; color: #fff; background:url(../img/food-bg.jpg) no-repeat center center/100% auto;} 
+.bg{position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,.7); z-index: 1}
 ul{padding:0;margin:0;}
 li{list-style: none}
- #wrapper-inner{width: 950px; margin:0 auto; }
+ #wrapper-inner{position: relative; width: 950px; margin:0 auto; z-index: 2}
  .wrapper-inner-tab{position: relative; float: left; width: 950px; margin-top: 125px; }
  .title {width: 100%; margin-top: 30px; font-size: 25px;  float: left; text-align: center; margin-bottom: 80px; }
  .backgrounds {float: left; height: 300px; width: 950px; }
@@ -19,11 +20,11 @@ li{list-style: none}
  .button:hover::after{-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); background-color: rgba(255,255,255,0); }
  .button.btn-on::before{-webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); background-color: rgba(255,255,255,0); }
  .button.btn-on::after{-webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); background-color: rgba(255,255,255,0); }
- .food-div{position: absolute;width: 950px;height: 45px;bottom:-100px;left: 0;overflow: hidden;font-size: 34px;}
+ .food-div{position: absolute;width: 950px;height: 45px;bottom:-100px;overflow: hidden;font-size: 34px;}
  .food-div ul{position: absolute; left: 0; top: 0;width: 100%;text-align: center;} 
  .food-div li{height: 45px;}
- #stop{position: relative; width: 168px;height: 60px;display: none;margin-left: calc(50% - 84px);top:200px;border: solid 2px #41403E;background: transparent; -webkit-transition: all .5s ease; transition: all .5s ease; color: #fff; font-size: 24px; letter-spacing: 2px; outline: none; border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; cursor: pointer; box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.3);}
-#stop:hover{box-shadow: 20px 38px 34px -26px rgba(255, 255, 255, 0.2);}
+ #stop{position: relative; width: 168px;height: 60px;display: none;margin-left: calc(50% - 84px);top:200px;border: solid 2px #b9b6b1;background: transparent; -webkit-transition: all .5s ease; transition: all .5s ease; color: #fff; font-size: 24px; letter-spacing: 2px; outline: none; border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; cursor: pointer; box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.3);}
+#stop:hover{box-shadow:20px 38px 34px -26px rgba(255, 255, 255, 0.58);}
 .box{display: none;position: absolute;width: 100%;height: 100%;z-index: 2;color:#000;text-align: center;z-index: 3;}
 #confirm-bg,#mood-bg{width: 100%;height: 100%;background: rgba(255,255,255,.3);}
 #confirm #confirm-box{position: absolute;top:50%;left:50%;width: 400px;min-height: 220px;padding-bottom: 20px; background: #fff; transform :translate(-50%,-50%); border-radius: 8px}
@@ -38,15 +39,17 @@ li{list-style: none}
 #mood-happy button{background: #8CD4F5}
 #mood-box{position: absolute;top:50%;left:50%;width: 400px;min-height: 220px;padding-bottom: 20px; background: #fff; transform :translate(-50%,-50%); border-radius: 8px}
 .message{width: 300px;margin: 0 auto;margin-bottom: 14px;}
+.add-a{color:#dad6d6;text-align: center;line-height: 50px;font-size: 16px;}
+.add-a a{color: #feb41d;text-decoration: none;font-size: 18px} 
 
-
-body{background:#191717;color:#fff;}
-.form-box{position: absolute; margin:auto;left: 0;top: 0;right: 0;bottom: 0;width: 500px;height: 185px;background:#EEEEEE;border-radius: 6px;}
+#add-food-page{position: absolute;left: 0; right: 0; top: 0; bottom: 0; margin: auto; height: 500px;z-index: 2} 
+.add-food-box{position: relative;height: 500px;}
+.form-box{position: absolute; margin:auto;left: 0;top: 0;right: 0;bottom: 0;width: 500px;height: 185px;background:#d6d1d1;border-radius: 6px;}
 .clearfix{text-align: center;padding:10px;box-sizing: border-box;margin-top: 30px;} 
-.form-box input{outline: none;border:#000;width: 230px;height: 47px;background:#65727b;color:#fff;padding-left: 10px;box-sizing:border-box;font-size: 14px;} 
+.form-box input{outline: none;border:#000;width: 230px;height: 47px;background:#65727b;color:#d6d1d1;padding-left: 10px;box-sizing:border-box;font-size: 14px;} 
 .form-box input::-webkit-input-placeholder{color:#e2dfdf;}
 .type{width: 100px;height: 47px;background: #333; position: relative;left: -4px;cursor: pointer;}
 .clearfix input,.clearfix .type{display: inline-block;line-height: 47px;vertical-align: top}
-#add-food-btn{outline: none;cursor: pointer;z-index: 2; line-height: 47px; height: 47px; display: block; background: #FEB41D; text-align: center; width:300px;margin:9px auto; color: #fff;font-size: 16px}
-#type-ul li{text-align: center;border-top:1px solid #fff;background: #333;cursor: pointer;height: 38px;line-height: 38px;}
+#add-food-btn{outline: none;cursor: pointer;z-index: 2;  height: 47px; line-height: 47px;display: block; background: #FEB41D; text-align: center; width:300px;margin:9px auto; color: #fff;font-size: 16px}
+#type-ul li{font-size: 15px; text-align: center;border-top:1px solid #fff;background: #333;cursor: pointer;height: 38px;line-height: 38px;}
 #type-ul{width: 100px;display: none;} 

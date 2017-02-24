@@ -7,9 +7,14 @@
 	<link rel="stylesheet" href="css/style.css"> 
 </head> 
 <body>   
+	<div class="bg"></div>
 	<div id="wrapper-inner">
 		<div class="wrapper-inner-tab">
-			<div class="title">请点击宝宝的meal time：</div>
+			<div class="title">
+				Which 选饭机您想让它动起来？
+				<div class="add-a">根据自己的饮食习惯？请 <a href="addfood.html">添加</a></div>
+			</div>
+
 			<div class="backgrounds" id="time">
 				<div class="first"><div class="sim-button button" onselectstart="return false;"><span class="food-btn">Breakfast</span></div></div>
 				<div class="second"><div class="sim-button button" onselectstart="return false;"><span class="food-btn">Lunch</span></div></div>
@@ -28,7 +33,7 @@
 		<div id="confirm-bg"></div>
 		<div id="confirm-box">
 			<div id="confirm-img"></div>
-			<div id="confirm-title"> you sure?</div>
+			<div id="confirm-title"><span id="food-name2"></span> 中不中？</div>
 			<div id="confirm-message" class="message"></div>
 			<div id="confirm-button">
 				<button id="confirm-no">哼！偶不喜欢</button>

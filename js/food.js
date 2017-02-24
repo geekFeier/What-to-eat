@@ -13,6 +13,7 @@ var oStop = document.getElementById('stop'),
 	oConfirmYes = document.getElementById('confirm-yes'),
 	oMoodBtn = document.getElementsByClassName('mood-btn'),
 	oFoodName = document.getElementById('food-name'),
+	oFoodName2 = document.getElementById('food-name2'),
 	oFood = document.getElementById('food'),
 	oUl = document.getElementsByTagName('ul')[0],
 	oLi = document.getElementsByTagName('li'),
@@ -103,12 +104,13 @@ function loadFood() {
 				oConfirmMsginnerHTML = '咱今天就吃"' + foodNameTxt + '"???';
 				oWrapperInner.style.display = 'none';
 				oConfirm.style.display = 'block';
+				oFoodName2.innerHTML = foodNameTxt;
 			};
 			oConfirmNo.onclick = function() {
 				oMoodMessage.innerHTML = foodNameTxt + " 已黯然失色躲在角落检测身体营养指数哭到妆都花了还是会深思熟虑如何才能博君子一笑即使还是会痛定思痛。";
 				oWrapperInner.style.display = 'none';
 				oConfirm.style.display = 'none';
-				oMoodSad.style.display = 'block';
+				oMoodSad.style.display = 'block'; 
 			}
 			oConfirmYes.onclick = function() {
 				oMoodMessage.innerHTML = "做到最好只为博得君子莞尔一笑" + foodNameTxt + "此时正在犄角旮旯歇斯底里的狂笑并享受被君子翻牌的自豪感和即将被食用的快乐感。";
@@ -127,3 +129,5 @@ function loadFood() {
 	}
 }
 loadFood();
+
+
