@@ -3,41 +3,76 @@
 <head>
 	<meta charset="UTF-8">
 	<title>添加营养餐</title>
+	<link rel='icon' href='img/logo.ico' type='image/x-ico' />
 	<link rel="stylesheet" href="css/style.css">
-</head>
-<style>
-
-</style>
+</head>  
 <body> 
     <div class="form-box">
     	<div class="clearfix">
     		<input type="text" name="name" value="" placeholder="食物名称">
     		<div class="type">
-    			<div class="type-tips">- 请选择 -</div>
+    			<div id="type-tips">- SELECT -</div>
 	    		<ul id="type-ul"> 
-	    			<li>早餐</li>
-	    			<li>中餐</li>
-	    			<li>晚餐</li>
+	    			<li>Breakfast</li>
+	    			<li>Lunch</li>
+	    			<li>Supper</li>
 	    		</ul> 
     		</div>  
     	</div>
     	<button id="add-food-btn">添加</button>
     </div>
 </body>
-<script>
-	var flag = true;
-	document.getElementsByClassName('type-tips')[0].onclick = function() {
-		document.getElementById('type-ul').display = "block"; 
+<script> 
+	var name,type;//食物名称 食物类型
+	var oTypeUl = document.getElementById('type-ul');
+	var typeFood = [{
+		name: "Breakfast",
+		type: 1
+	}, {
+		name: "Lunch",
+		type: 2
+	}, {
+		name: "Supper",
+		type: 3
+	}];
+	document.getElementById('type-tips').onclick = function() {
+		oTypeUl.style.display = "block"; 
 	}
-	document.getElementById('type-ul').children.onclick = function(){ 
-		flag = !flag;
+	var oLi = document.getElementById('type-ul').children;
+	for(var i = 0, len = oLi.length; i < len; i++){
+		oLi[i].onclick = function(){   
+			typeName = this.innerHTML; 
+			for (var j in typeFood) {
+			 	typeFood[j].name == typeName ? type = ++j : type == 0;
+			 } 
+			 oTypeUl.style.display = "none"; 
+		}
 	}
+	
 	document.getElementById('add-food-btn').onclick = function() {
-		var name = document.getElementsByName('name')[0].value,
-			type = document.getElementsByName('type')[0].value;
+		var name = document.getElementsByName('name')[0].value;
+		var verifyVal = function(name, msg) {
+			if (!name) {
+				alert(msg);
+				return false;
+			}
+		}
+		if(!name){
+			alert('请输入食物名称');
+			return false;
+		}
+		if(!type){
+			alert('请选择食物类型');
+			return false;
+		} 
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("POST", "./api/SetFood.php?name=" + name + "&type=" + type, true);
 		xmlhttp.send();
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				alert('添加成功！');
+			}
+		}
 	}
 </script>
 </html>

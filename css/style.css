@@ -1,4 +1,4 @@
-*{margin:0;padding:0;border:0; }
+*{margin:0;padding:0;border:0; } 
 body {background-color:#191717; font-family: "Microsoft YaHei"; color: #fff;} 
 ul{padding:0;margin:0;}
 li{list-style: none}
@@ -45,9 +45,8 @@ body{background:#191717;color:#fff;}
 .clearfix{text-align: center;padding:10px;box-sizing: border-box;margin-top: 30px;} 
 .form-box input{outline: none;border:#000;width: 230px;height: 47px;background:#65727b;color:#fff;padding-left: 10px;box-sizing:border-box;font-size: 14px;} 
 .form-box input::-webkit-input-placeholder{color:#e2dfdf;}
-.type{width: 100px;height: 47px;background: #5E7C87; position: relative;left: -4px;cursor: pointer;}
+.type{width: 100px;height: 47px;background: #333; position: relative;left: -4px;cursor: pointer;}
 .clearfix input,.clearfix .type{display: inline-block;line-height: 47px;vertical-align: top}
 #add-food-btn{outline: none;cursor: pointer;z-index: 2; line-height: 47px; height: 47px; display: block; background: #FEB41D; text-align: center; width:300px;margin:9px auto; color: #fff;font-size: 16px}
-#type-ul li{text-align: center;border-bottom:1px solid #fff;background: #333;cursor: pointer;height: 38px;line-height: 38px;}
-#type-ul{width: 100px;display: none;}
-#type-ul li:last-child{border-bottom: 0}
+#type-ul li{text-align: center;border-top:1px solid #fff;background: #333;cursor: pointer;height: 38px;line-height: 38px;}
+#type-ul{width: 100px;display: none;} 
