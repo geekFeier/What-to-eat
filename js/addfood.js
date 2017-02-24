@@ -18,6 +18,8 @@ var oLi = document.getElementById('type-ul').children;
 for (var i = 0, len = oLi.length; i < len; i++) {
 	oLi[i].onclick = function() {
 		typeName = this.innerHTML;
+		document.getElementById('type-tips').innerHTML = typeName;
+		console.log(typeName);
 		for (var j in typeFood) {
 			typeFood[j].name == typeName ? type = ++j : type == 0;
 		}
