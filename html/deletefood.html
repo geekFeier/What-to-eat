@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>删除营养餐</title>
+	<link rel='icon' href='../img/logo.ico' type='image/x-ico' />
+	<link rel="stylesheet" href="../css/style.css">
+</head>  
+<body>   
+	<div class="bg"></div>
+	<div id="delete-food-page" class="add-food-page">
+		<div class="add-food-box">
+			<div class="title">删除不喜欢的食物</div>
+			<div class="form-box">
+				<div class="clearfix">
+					<input type="text" name="name" value="" placeholder="食物名称">
+					<div class="type">
+						<div id="type-tips">- SELECT -</div>
+			    		<ul id="type-ul"> 
+			    			<li>Breakfast</li>
+			    			<li>Lunch</li>
+			    			<li>Supper</li>
+			    		</ul> 
+					</div>  
+				</div>
+				<button id="delete-food-btn" class="food-btn2">删除</button>
+			</div> 
+		</div>
+	</div>
+</body> 
+<script src="../js/modifyFood.js"></script>  
+<script>
+	//删除食物
+	document.getElementById('delete-food-btn').onclick = function() {
+		var name = document.getElementsByName('name')[0].value; 
+		if (!name) {
+			alert('请输入食物名称');
+			return false;
+		}
+		if (!type) {
+			alert('请选择食物类型');
+			return false;
+		}
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", "../api/DeleteFood.php?name=" + name + "&type=" + type, true);
+		xmlhttp.send();
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				alert('删除成功！');
+			}
+		}
+	}
+</script>
+</html>

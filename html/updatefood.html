@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改营养餐</title>
+	<link rel='icon' href='../img/logo.ico' type='image/x-ico' />
+	<link rel="stylesheet" href="../css/style.css">
+</head>  
+<body>   
+	<div class="bg"></div>
+	<div id="update-food-page" class="add-food-page">
+		<div class="add-food-box">
+			<div class="title">修改你想吃的菜品</div>
+			<div class="form-box form-box-update">
+				<!-- 原 -->
+				<div class="clearfix">
+					<input type="text" name="name" value="" placeholder="原食物名称">
+					<div class="type">
+						<div id="type-tips">- SELECT -</div>
+			    		<ul id="type-ul"> 
+			    			<li>Breakfast</li>
+			    			<li>Lunch</li>
+			    			<li>Supper</li>
+			    		</ul> 
+					</div>  
+				</div>
+				<!-- 修改后 --> 
+				<input type="text" name="newname" value="" placeholder="修改为的新食物名称">  
+				
+				<button id="update-food-btn" class="food-btn2">修改</button>
+			</div> 
+		</div>
+	</div>
+</body> 
+<script src="../js/modifyFood.js"></script>
+<script> 
+	//修改食物
+	document.getElementById('update-food-btn').onclick = function() {
+		var name = document.getElementsByName('name')[0].value;
+		var newname = document.getElementsByName('newname')[0].value;
+		if (!name) {
+			alert('请输入食物名称');
+			return false;
+		}
+		if (!newname) {
+			alert('请输入新食物名称');
+			return false;
+		}
+		if (!type) {
+			alert('请选择食物类型');
+			return false;
+		}
+
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", "../api/UpdateFood.php?name=" + name + "&type=" + type + "&newname=" + newname, true);
+		xmlhttp.send();
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				alert('修改成功！');
+			}
+		}
+	}
+
+</script>
+</html>

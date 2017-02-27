@@ -21,7 +21,7 @@ var oStop = document.getElementById('stop'),
 
 function loadFood() {
 	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("POST", "./api/GetFood.php", true);
+	xmlhttp.open("GET", "../api/GetFood.php", true);
 	xmlhttp.send();
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

@@ -31,12 +31,13 @@ class SetFood extends PublicFood {
         $foodType = $this->foodType;
        $a =  $this->connect->insert('list',array('title'=>$foodName,'type'=>$foodType));
        if($a = 1){
-           echo "成功";
+           echo "添加成功";
        }else{
-           echo "失败";
+           echo "添加失败";
        }
     }
+    
 }
 
 $food = new SetFood($_GET);
-$food->addFood();
+$food->addFood(); 

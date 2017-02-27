@@ -42,14 +42,20 @@ li{list-style: none}
 .add-a{color:#dad6d6;text-align: center;line-height: 50px;font-size: 16px;}
 .add-a a{color: #feb41d;text-decoration: none;font-size: 18px} 
 
-#add-food-page{position: absolute;left: 0; right: 0; top: 0; bottom: 0; margin: auto; height: 500px;z-index: 2} 
+.add-food-page{position: absolute;left: 0; right: 0; top: 0; bottom: 0; margin: auto; height: 500px;z-index: 2} 
 .add-food-box{position: relative;height: 500px;}
 .form-box{position: absolute; margin:auto;left: 0;top: 0;right: 0;bottom: 0;width: 500px;height: 185px;background:#d6d1d1;border-radius: 6px;}
-.clearfix{text-align: center;padding:10px;box-sizing: border-box;margin-top: 30px;} 
-.form-box input{outline: none;border:#000;width: 230px;height: 47px;background:#65727b;color:#d6d1d1;padding-left: 10px;box-sizing:border-box;font-size: 14px;} 
-.form-box input::-webkit-input-placeholder{color:#e2dfdf;}
-.type{width: 100px;height: 47px;background: #333; position: relative;left: -4px;cursor: pointer;}
-.clearfix input,.clearfix .type{display: inline-block;line-height: 47px;vertical-align: top}
-#add-food-btn{outline: none;cursor: pointer;z-index: 2;  height: 47px; line-height: 47px;display: block; background: #FEB41D; text-align: center; width:300px;margin:9px auto; color: #fff;font-size: 16px}
+.clearfix{width: 330px;text-align: center;box-sizing: border-box;margin: 35px auto;padding-bottom: 30px } 
+.form-box input{outline: none;border:#000;width: 230px;height: 47px;background:#65727b;color:#fff;padding-left: 10px;box-sizing:border-box;font-size: 14px;} 
+.form-box input::-webkit-input-placeholder{color:#bbb9b9;}
+.type{width: 100px;height: 47px;background: #333; position: relative;cursor: pointer;color:#bbb9b9; z-index: 3;}
+.clearfix input,.clearfix .type{float: left; display: inline-block;line-height: 47px;vertical-align: top}
+.food-btn2{outline: none;cursor: pointer;z-index: 2;  height: 47px; line-height: 47px;display: block; background: #FEB41D; text-align: center; width:330px;margin:9px auto; color: #fff;font-size: 16px}
+#delete-food-btn{outline: none;cursor: pointer;z-index: 2;  height: 47px; line-height: 47px;display: block; background: #FEB41D; text-align: center; width:300px;margin:9px auto; color: #fff;font-size: 16px}
 #type-ul li{font-size: 15px; text-align: center;border-top:1px solid #fff;background: #333;cursor: pointer;height: 38px;line-height: 38px;}
 #type-ul{width: 100px;display: none;} 
+
+input[name=newname]{width: 330px;position: relative;margin: 0 auto;display: block;}
+
+.form-box-update{height:255px;}
+.form-box-update .food-btn2{position: relative;top:20px;}

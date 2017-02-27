@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"> 
+	<title>爱心便当</title>  
+	<link rel='icon' href='../img/logo.ico' type='image/x-ico' /> 
+	<link rel="stylesheet" href="../css/style.css"> 
+</head> 
+<body>   
+	<div class="bg"></div>
+	<div id="wrapper-inner">
+		<div class="wrapper-inner-tab">
+			<div class="title">
+				Which 选饭机您想让它动起来？
+				<div class="add-a">根据自己的饮食习惯？请 <a href="addfood.html">添加</a> <a href="updatefood.html">修改</a> <a href="deletefood.html">删除</a></div>
+			</div>
+
+			<div class="backgrounds" id="time">
+				<div class="first"><div class="sim-button button" onselectstart="return false;"><span class="food-btn">Breakfast</span></div></div>
+				<div class="second"><div class="sim-button button" onselectstart="return false;"><span class="food-btn">Lunch</span></div></div>
+				<div class="third"><div class="sim-button button" onselectstart="return false;"><span class="food-btn">Supper</span></div></div>
+			</div> 
+			<div class="food-div">
+				<ul id="food">
+					<li>&nbsp;</li>
+				</ul> 
+			</div>  
+			<button id="stop">Duang!</button> 
+		</div>
+	</div>   
+	<!-- 确认框  -->
+	<div id="confirm" class="box">
+		<div id="confirm-bg"></div>
+		<div id="confirm-box">
+			<div id="confirm-img"></div>
+			<div id="confirm-title"><span id="food-name2"></span> 中不中？</div>
+			<div id="confirm-message" class="message"></div>
+			<div id="confirm-button">
+				<button id="confirm-no">哼！偶不喜欢</button>
+				<button id="confirm-yes">wow，就你啦!</button>
+			</div>
+		</div>
+	</div>
+	<div id="mood-sad" class="box">
+		<div id="mood-bg"></div>
+		<div id="mood-box">
+			<div id="mood-img"></div> 
+			<div id="mood-message" class="message"></div>
+			<div id="mood-button">
+				<button id="mood-btn" class="mood-btn">将爱情进行到底</button>
+			</div>
+		</div>
+	</div>
+	<div id="mood-happy" class="box">
+		<div id="mood-bg"></div>
+		<div id="mood-box">
+			<div id="mood-img"></div> 
+			<div id="mood-message" class="message">😝 嘻嘻嘻嘻 <span id="food-name"></span> 与你不见不散~</div>
+			<div id="mood-button">
+				<button id="mood-btn" class="mood-btn">走进婚姻的殿堂</button>
+			</div>
+		</div>
+	</div>
+</body> 
+<script src="../js/food.js"></script> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
