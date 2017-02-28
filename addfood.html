@@ -3,13 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>添加营养餐</title>
-	<link rel='icon' href='../img/logo.ico' type='image/x-ico' />
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel='icon' href='./img/logo.ico' type='image/x-ico' />
+	<link rel="stylesheet" href="./css/style.css">
+
 </head>  
 <body>   
 	<div class="bg">
-		
-	</div>
+		<div class="success-box" style="opacity: 0;"></div>
+	</div> 
 	<div id="add-food-page" class="add-food-page">
 		<div class="add-food-box">
 			<div class="title">添加你想吃的菜品 一大堆</div>
@@ -29,8 +30,14 @@
 			</div> 
 		</div>
 	</div>
+	<ul id="loading">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 </body> 
-<script src="../js/modifyFood.js"></script>
+<script src="./js/modifyFood.js"></script>
 <script> 
 	//添加食物
 	document.getElementById('add-food-btn').onclick = function() {
@@ -46,10 +53,13 @@
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", "../api/SetFood.php?name=" + name + "&type=" + type, true);
 		xmlhttp.send();
+		document.getElementById('add-food-page').style.display = "none";
+		document.getElementsByClassName('bg')[0].style.zIndex = "3"; 
+		document.getElementById('loading').style.display = 'block';
+
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				alert('添加成功！');
-				window.location.href("index.html");
+				successSkip("添加成功，正在返回主页...");
 			}
 		}
 	}  

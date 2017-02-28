@@ -3,11 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>修改营养餐</title>
-	<link rel='icon' href='../img/logo.ico' type='image/x-ico' />
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel='icon' href='./img/logo.ico' type='image/x-ico' />
+	<link rel="stylesheet" href="./css/style.css">
 </head>  
 <body>   
-	<div class="bg"></div>
+	<div class="bg">
+		<div class="success-box" style="opacity: 0;"></div>
+	</div> 
 	<div id="update-food-page" class="add-food-page">
 		<div class="add-food-box">
 			<div class="title">修改你想吃的菜品</div>
@@ -31,8 +33,14 @@
 			</div> 
 		</div>
 	</div>
+	<ul id="loading">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 </body> 
-<script src="../js/modifyFood.js"></script>
+<script src="./js/modifyFood.js"></script>
 <script> 
 	//修改食物
 	document.getElementById('update-food-btn').onclick = function() {
@@ -49,14 +57,16 @@
 		if (!type) {
 			alert('请选择食物类型');
 			return false;
-		}
-
+		} 
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", "../api/UpdateFood.php?name=" + name + "&type=" + type + "&newname=" + newname, true);
+		xmlhttp.open("GET", "./api/UpdateFood.php?name=" + name + "&type=" + type + "&newname=" + newname, true);
 		xmlhttp.send();
+		document.getElementById('update-food-page').style.display = "none";
+		document.getElementsByClassName('bg')[0].style.zIndex = "3"; 
+		document.getElementById('loading').style.display = 'block';
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				alert('修改成功！');
+				successSkip("修改成功，正在返回主页...");
 			}
 		}
 	}

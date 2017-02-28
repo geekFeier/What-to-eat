@@ -3,11 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>删除营养餐</title>
-	<link rel='icon' href='../img/logo.ico' type='image/x-ico' />
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel='icon' href='./img/logo.ico' type='image/x-ico' />
+	<link rel="stylesheet" href="./css/style.css">
 </head>  
 <body>   
-	<div class="bg"></div>
+	<div class="bg">
+		<div class="success-box" style="opacity: 0;"></div>
+	</div> 
 	<div id="delete-food-page" class="add-food-page">
 		<div class="add-food-box">
 			<div class="title">删除不喜欢的食物</div>
@@ -27,8 +29,14 @@
 			</div> 
 		</div>
 	</div>
+	<ul id="loading">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 </body> 
-<script src="../js/modifyFood.js"></script>  
+<script src="./js/modifyFood.js"></script>  
 <script>
 	//删除食物
 	document.getElementById('delete-food-btn').onclick = function() {
@@ -42,11 +50,14 @@
 			return false;
 		}
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", "../api/DeleteFood.php?name=" + name + "&type=" + type, true);
+		xmlhttp.open("GET", "./api/DeleteFood.php?name=" + name + "&type=" + type, true);
 		xmlhttp.send();
+		document.getElementById('delete-food-page').style.display = "none";
+		document.getElementsByClassName('bg')[0].style.zIndex = "3"; 
+		document.getElementById('loading').style.display = 'block';
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				alert('删除成功！');
+				successSkip("删除成功，正在返回主页...");
 			}
 		}
 	}
