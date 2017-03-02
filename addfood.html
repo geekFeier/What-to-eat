@@ -55,8 +55,7 @@
 		xmlhttp.send();
 		document.getElementById('add-food-page').style.display = "none";
 		document.getElementsByClassName('bg')[0].style.zIndex = "3"; 
-		document.getElementById('loading').style.display = 'block';
-
+		document.getElementById('loading').style.display = 'block'; 
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 				successSkip("添加成功，正在返回主页...");

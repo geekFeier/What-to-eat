@@ -27,16 +27,15 @@ class SetFood extends PublicFood {
      * @author mr.zhou <zhouwei9280@gmail.com>
      */
     public function addFood(){
-        $foodName=  $this->foodName;
-        $foodType = $this->foodType;
+       $foodName=  $this->foodName;
+       $foodType = $this->foodType;
        $a =  $this->connect->insert('list',array('title'=>$foodName,'type'=>$foodType));
        if($a = 1){
            echo "添加成功";
        }else{
            echo "添加失败";
        }
-    }
-    
+    } 
 }
 
 $food = new SetFood($_GET);

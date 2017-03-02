@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面跑啦!</title>
+	<link rel="stylesheet" href="css/style.css"> 
+</head>
+<body class="page404"> 
+	<div class="txt404">404</div> 
+	<span></span> 
+</body>
+<script>
+	var txtArr = [404, "页面已跑偏", "页面跑啦", "啦啦啦", "哎呦跑啦页面", "快去打开正确的地方", "臣妾对不起"];
+	var colorArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]; 
+	var clientW = document.body.clientWidth || document.documentElement.clientWidth; //可视区域宽
+	var clientH = document.body.clientHeight || document.documentElement.clientHeight; //可视区域高
+	var colorVal = "#",
+		i = 0;
+
+	function randomTxt() {
+		var randomNum = Math.floor(Math.random() * txtArr.length); // 文字随机数 
+		randomX = Math.floor(Math.random() * clientW), // X軸随机数
+			randomY = Math.floor(Math.random() * clientH), // Y轴随机数
+			oSpan = document.createElement('span');
+		document.body.appendChild(oSpan);
+		while (i < 6) {
+			var randomColor = Math.floor(Math.random() * colorArr.length); // 颜色随机数
+			colorVal += String(colorArr[randomColor])
+			i++
+		}
+		var spans = document.getElementsByTagName('span');
+		spans[spans.length - 1].style.left = randomX + "px";
+		spans[spans.length - 1].style.top = randomY + "px";
+		spans[spans.length - 1].style.color = colorVal;
+		spans[spans.length - 1].style.fontSize = Math.ceil(Math.random()* 60 + 12) + "px";// 字体最大为60
+		spans[spans.length - 1].innerHTML = txtArr[randomNum];
+		// 初始化颜色值和i
+		colorVal = "#";
+		i = 0;
+	}
+	setInterval("randomTxt()", 1000);
+</script>
+</html>
