@@ -43,9 +43,8 @@
 	}
 
 	function randomHideSpan() {
-		document.getElementsByTagName('span')[1].className = 'opacityAnimateHide';
-		var oSpan0 = document.getElementsByTagName('span')[0];
-		setTimeout(oSpan0 + ".parentNode.removeChild(" + oSpan0 + "('span')[0]); ", 250)
+		document.getElementsByTagName('span')[1].className = "opacityAnimateHide"; 
+		setTimeout("document.getElementsByTagName('span')[0].parentNode.removeChild(document.getElementsByTagName('span')[0])", 250)
 	}
 	setInterval("randomShowSpan()", 200);
 	setInterval("randomHideSpan()", 250);
