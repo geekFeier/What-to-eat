@@ -7,8 +7,7 @@
 	<link rel="stylesheet" href="css/style.css"> 
 </head>
 <body class="page404"> 
-	<div class="txt404">404</div> 
-	<span></span> 
+	<div class="txt404">404</div>  
 </body>
 <script>
 	var txtArr = [404, "页面已跑偏", "页面跑啦", "啦啦啦", "哎呦跑啦页面", "快去打开正确的地方", "臣妾对不起"],
@@ -17,28 +16,37 @@
 		clientH = document.body.clientHeight || document.documentElement.clientHeight, //可视区域高
 		colorVal = "#",
 		i = 0;
-		function randomTxt() {
-			var randomNum = Math.floor(Math.random() * txtArr.length); // 文字随机数 
+
+	function randomShowSpan() {
+		var randomNum = Math.floor(Math.random() * txtArr.length), // 文字随机数 
 			randomX = Math.floor(Math.random() * clientW), // X軸随机数
-				randomY = Math.floor(Math.random() * clientH), // Y轴随机数
-				oSpan = document.createElement('span');
-			document.body.appendChild(oSpan);
-			while (i < 6) {
-				var randomColor = Math.floor(Math.random() * colorArr.length); // 颜色随机数
-				colorVal += String(colorArr[randomColor])
-				i++
-			}
-			var spans = document.getElementsByTagName('span'),
-				spanThis = spans[spans.length - 1];
-			spanThis.style.left = randomX + "px";
-			spanThis.style.top = randomY + "px";
-			spanThis.style.color = colorVal;
-			spanThis.style.fontSize = Math.ceil(Math.random() * 60 + 12) + "px"; // 字体最大为60
-			spanThis.innerHTML = txtArr[randomNum];
-			// 初始化颜色值和i
-			colorVal = "#";
-			i = 0;
+			randomY = Math.floor(Math.random() * clientH), // Y轴随机数
+			oSpan = document.createElement('span');
+		document.body.appendChild(oSpan);
+		while (i < 6) {
+			var randomColor = Math.floor(Math.random() * colorArr.length); // 颜色随机数
+			colorVal += String(colorArr[randomColor]);
+			i++;
 		}
-		setInterval("randomTxt()", 1000);
-</script>
+		var spans = document.getElementsByTagName('span'),
+			spanThis = spans[spans.length - 1];
+
+		spanThis.style.left = randomX + "px";
+		spanThis.style.top = randomY + "px";
+		spanThis.style.color = colorVal;
+		spanThis.style.fontSize = Math.ceil(Math.random() * 60 + 12) + "px"; // 字体最大为60
+		spanThis.innerHTML = txtArr[randomNum];
+		spanThis.className = "opacityAnimateShow";
+		// 初始化颜色值和i 
+		colorVal = "#";
+		i = 0;
+	}
+
+	function randomHideSpan() {
+		document.getElementsByTagName('span')[1].className = 'opacityAnimateHide';
+		setTimeout("document.getElementsByTagName('span')[0].parentNode.removeChild(document.getElementsByTagName('span')[0]); ", 250)
+	}
+	setInterval("randomShowSpan()", 200);
+	setInterval("randomHideSpan()", 250);
+	</script>
 </html>

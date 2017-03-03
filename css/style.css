@@ -115,6 +115,19 @@ input[name=newname]{width: 330px;position: relative;margin: 0 auto;display: bloc
 } 
 
 
-.page404{background-image: none;color: #000}
+.page404{background-image: none;color: #000;position: absolute;width: 100%;height: 100%;overflow: hidden;}
 .page404 div.txt404{z-index:999;position: relative;height: 400px;text-align: center;margin:auto;position: absolute;top:0;left: 0;right: 0;bottom: 0;font:bold 300px/1 "microsoft yahei";}
 .page404 span{font:bold 50px "microsoft yahei";position: absolute;}
+.page404 span.opacityAnimateShow{animation: opacityAnimateShow 0.5s;}
+.page404 span.opacityAnimateHide{animation: opacityAnimateHide 0.5s;}
+
+@keyframes opacityAnimateShow
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+@keyframes opacityAnimateHide
+{
+from {opacity: 1;}
+to {opacity: 0;}
+}
