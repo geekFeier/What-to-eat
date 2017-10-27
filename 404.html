@@ -18,13 +18,13 @@
 		i = 0;
 
 	function randomShowSpan() {
-		var randomNum = Math.floor(Math.random() * txtArr.length), // 文字随机数 
-			randomX = Math.floor(Math.random() * clientW), // X軸随机数
-			randomY = Math.floor(Math.random() * clientH), // Y轴随机数
+		var randomNum = ~~(Math.random() * txtArr.length), // 文字随机数 
+			randomX = ~~(Math.random() * clientW), // X軸随机数
+			randomY = ~~(Math.random() * clientH), // Y轴随机数
 			oSpan = document.createElement('span');
 		document.body.appendChild(oSpan);
 		while (i < 6) {
-			var randomColor = Math.floor(Math.random() * colorArr.length); // 颜色随机数
+			var randomColor = ~~(Math.random() * colorArr.length); // 颜色随机数
 			colorVal += String(colorArr[randomColor]);
 			i++;
 		}
