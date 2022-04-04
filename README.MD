@@ -4,8 +4,5 @@ Here you can choose some food at random when you don't know what to eat,or u can
 <ul>
 	<li>
 		<a href="https://geekFeier.github.io/meal">https://geekFeier.github.io/meal</a>
-	</li>
-	<li>
-		<a href="http://meal.oschina.mopaasapp.com">http://meal.oschina.mopaasapp.com</a>(有PHP环境)
-	</li>
+	</li> 
 </ul>
