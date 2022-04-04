@@ -47,3 +47,6 @@ function successSkip(txt) {
 	setTimeout('window.location.href = "index.html";', 1200);
 }
  
+let w = document.body.clientWidth
+let h = document.body.clientHeight
+document.querySelector('body').style['background-size'] = w > h ? '100vw auto' : 'auto 100vh'

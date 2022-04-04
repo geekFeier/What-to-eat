@@ -35,12 +35,13 @@
 
 	function loadFood() {
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", "../api/GetFood.php", true);
-		// xmlhttp.send();
+		xmlhttp.open("GET", "https://e522e052-25dd-4129-977a-d244c1723a9d.lafyun.com/func/food-get", true);
+		xmlhttp.send();
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 				xmlDoc = JSON.parse(xmlhttp.responseText);
-				[foodBreakfast, foodLunch, foodSupper] = [xmlDoc.breakfast, xmlDoc.lunch, xmlDoc.dinner];
+				[foodBreakfast, foodLunch, foodSupper] = [xmlDoc.data.filter(item=>item.type === 1), xmlDoc.data.filter(item=>item.type === 2), xmlDoc.data.filter(item=>item.type === 3)];
+        [foodBreakfast, foodLunch, foodSupper] = [foodBreakfast.map(item=>item.name), foodLunch.map(item=>item.name), foodSupper.map(item=>item.name)]
 				var timeTxtObj = [], // 早中晚的单词
 					date = new Date(),
 					hour = date.getHours(),
@@ -146,3 +147,4 @@
 		}
 	}
 	loadFood();
+

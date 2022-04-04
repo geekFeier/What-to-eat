@@ -1,9 +1,10 @@
 *, *:after, *:before {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0; margin: 0; border:0; } 
-body {min-height: 950px; font-family: "Microsoft YaHei"; color: #fff; background:url(../img/food-bg.jpg) no-repeat center center;background-size: cover }
+body {width: 100vw;
+  height: 100vh;min-height: 950px; font-family: "Microsoft YaHei"; color: #fff; background:url(../img/food-bg.jpg) no-repeat}
 ::-webkit-scrollbar {
     width: 0px; 
 }
-.bg{position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,.7); z-index: 1}
+.bg{position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,.6); z-index: 1}
 ul{padding:0;margin:0;}
 li{list-style: none}
  #wrapper-inner{position: relative; width: 950px; margin:0 auto; z-index: 2}

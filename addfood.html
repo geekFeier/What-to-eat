@@ -51,8 +51,10 @@
 			return false;
 		}
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", "../api/SetFood.php?name=" + name + "&type=" + type, true);
-		xmlhttp.send();
+		xmlhttp.open("POST", "https://e522e052-25dd-4129-977a-d244c1723a9d.lafyun.com/func/food-add", true);
+    xmlhttp.setRequestHeader('Content-Type', 'application/json');
+		xmlhttp.send(JSON.stringify({name,type}) );//POST 传body方式
+
 		document.getElementById('add-food-page').style.display = "none";
 		document.getElementsByClassName('bg')[0].style.zIndex = "3"; 
 		document.getElementById('loading').style.display = 'block'; 
